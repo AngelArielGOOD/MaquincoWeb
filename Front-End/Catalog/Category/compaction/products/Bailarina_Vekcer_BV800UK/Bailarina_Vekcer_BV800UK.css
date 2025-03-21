@@ -1,0 +1,240 @@
+/* Asegúrate de que todos los elementos se ajusten correctamente */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex; /* Usamos flexbox para distribuir las secciones */
+    gap: 170px; /* Espaciado entre las secciones */
+    align-items: flex-start; /* Alineamos al inicio */
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Estilos para la sección de información del producto */
+.product-info {
+    width: 55%;
+    padding: 20px;
+}
+
+.product-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-name-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Botón de descarga PDF */
+.download-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+.product-model {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-family: 'Muli', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Estilos para las imágenes del producto */
+.product-images {
+    width: 31%;
+    padding: 10px;
+    background-color: rgba(245, 245, 245, 0.744);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 4px;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 119px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid rgb(237, 233, 233);
+    transition: transform .5s ease-in;
+}
+
+.thumbnails img:hover {
+    transform: scale(1.1);
+}
+
+/* Tabla de especificaciones */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+
+.product-table caption {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.product-table th, .product-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.product-table th {
+    background-color: #f4f4f4;
+}
+
+/* Sección de contacto */
+.contact-form {
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 30px 10%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-form h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.submit-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries Responsivas */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .product-info, .product-images {
+        width: 100%;
+    }
+
+    .main-image {
+        height: auto;
+        object-fit: contain;
+    }
+
+    .thumbnails {
+        justify-content: center;
+    }
+
+    .thumbnails img {
+        width: 100px;
+    }
+
+    .product-name-container {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .download-btn {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-name {
+        font-size: 1.1em;
+    }
+
+    .product-model {
+        font-size: 1.2em;
+    }
+
+    .product-description {
+        font-size: 0.9em;
+    }
+
+    .main-image {
+        height: 300px;
+    }
+
+    .thumbnails img {
+        width: 80px;
+    }
+}

@@ -1,0 +1,126 @@
+/* Estilos generales para el encabezado */
+.header_navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s ease;
+    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+}
+
+/* Estilo para el contenido principal (para evitar que quede oculto por el header) */
+main {
+    margin-top: 80px; /* Ajusta este valor al tamaño de tu encabezado */
+}
+
+/* Estilos para las imágenes dentro del encabezado */
+.header_navigation img {
+    max-width: 200px;
+    max-height: 100px;
+}
+
+/* Estilos del menú de navegación (inicialmente visible) */
+.menu_navigation ul {
+    display: flex;
+    margin: 0 20px;
+    gap: 15px;
+    list-style-type: none;
+}
+
+/* Estilos para los enlaces en el menú */
+.menu_navigation a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.menu_navigation a:hover {
+    color: rgb(246, 255, 0); /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos para el botón de menú (inicialmente oculto) */
+#menu_btn {
+    background-color: transparent;
+    border: none;
+    padding: 25px;
+    cursor: pointer;
+    display: none; /* El botón estará oculto por defecto */
+    z-index: 1010; /* Asegura que el botón esté por encima del menú */
+}
+
+#menu_btn img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Media query para pantallas más pequeñas (máximo 728px) */
+@media screen and (max-width: 728px) {
+main{
+    margin-top: 110px;
+}
+
+
+    /* Mostrar el botón de menú solo en pantallas pequeñas */
+    #menu_btn {
+        display: block;
+    }
+
+    /* Estilo para el menú cuando se haga clic en el botón */
+    .menu_navigation {
+        position: fixed;
+        top: 0;
+        right: -250px; /* El menú está oculto a la derecha */
+        width: 250px; /* Ancho del menú */
+        height: 100vh; /* Altura completa de la pantalla */
+        background-color: rgba(169, 169, 169, 0.9); /* Fondo gris con algo de transparencia */
+        transition: right 0.3s ease; /* Transición suave al mostrar/ocultar */
+        display: flex;
+        flex-direction: column;
+        padding-top: 60px; /* Espaciado superior */
+    }
+
+    /* Cuando el menú tiene la clase 'active', se mueve a la vista */
+    .menu_navigation.active {
+        right: 0; /* Mueve el menú a la vista */
+    }
+
+    /* Cambiar el diseño de los elementos del menú en pantallas pequeñas */
+    /* Estilo para los enlaces en el menú */
+    .menu_navigation ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column; /* Menú en columna */
+        width: 100%; /* Asegura que el menú ocupe todo el ancho */
+    }
+
+    .menu_navigation li {
+        border-bottom: 1px solid #ccc; /* Línea separadora */
+        width: 100%; /* Asegura que cada item ocupe todo el ancho del menú */
+    }
+
+    .menu_navigation a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        display: block; /* Hacer que el enlace ocupe todo el ancho del li */
+        padding: 10px 0; /* Espaciado vertical */
+        text-align: center; /* Centrar el texto */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    }
+
+    /* Efecto al pasar el mouse */
+    .menu_navigation a:hover {
+        background-color: rgba(221, 255, 0, 0.515); /* Tono gris más fuerte */
+        color: rgb(0, 0, 0); /* Cambiar el color del texto a negro */
+    }
+}
