@@ -134,54 +134,59 @@
 }
 
 /* Sección de contacto */
-.contact-form {
-    width: 100%;
-    background-color: #f8f8f8;
-    padding: 30px 10%;
+.contact-form h2{
     text-align: center;
-    margin-top: 20px;
-}
-
-.contact-form h2 {
+    width: 100%;
     font-size: 1.8em;
     margin-bottom: 20px;
+    color: #e70000;
+    
+}
+
+/* Contenedor de los botones */
+.whatsapp-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre botones */
+}
+
+/* Estilos de cada botón */
+.whatsapp-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    width: 140px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
+.whatsapp-card img {
+    width: 50px; /* Tamaño del icono */
+    height: 50px;
+    margin-bottom: 10px;
 }
 
-.form-group label {
-    display: block;
+.whatsapp-card span {
+    font-size: 1em;
     font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
+    text-align: center;
 }
 
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
+/* Efecto al pasar el mouse */
+.whatsapp-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.submit-btn {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-.submit-btn:hover {
-    background-color: #0056b3;
-}
+
 
 /* Media Queries Responsivas */
 @media (max-width: 1024px) {
